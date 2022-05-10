@@ -50,3 +50,6 @@ public
 # We are ignoring the icon components because they are generated from svgs in
 # `icons/svgs` by @svgr/cli. See packages/icons/README.md for more info
 packages/icons/src/components/
+
+# turborepo cache
+.turbo

@@ -1,9 +1,17 @@
 {
   "name": "root",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "pnpm": {
     "peerDependencyRules": {
-      "ignoreMissing": ["webpack"]
+      "ignoreMissing": [
+        "webpack"
+      ]
     }
+  },
+  "devDependencies": {
+    "turbo": "^1.2.8"
   }
 }
