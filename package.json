@@ -1,9 +1,17 @@
 {
   "name": "root",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "pnpm": {
     "peerDependencyRules": {
-      "ignoreMissing": ["webpack"]
+      "ignoreMissing": [
+        "webpack"
+      ]
     }
+  },
+  "devDependencies": {
+    "nx": "14.1.4"
   }
 }
