@@ -1,0 +1,70 @@
+// Copyright 2021 The Cockroach Authors.
+//
+// Use of this software is governed by the Business Source License
+// included in the file licenses/BSL.txt.
+//
+// As of the Change Date specified in that file, in accordance with
+// the Business Source License, use of this software will be governed
+// by the Apache License, Version 2.0, included in the file
+// licenses/APL.txt.
+
+import React from "react";
+import { EmptyTable, EmptyTableProps } from "src/empty";
+import { Anchor } from "src/anchor";
+import { statementsTable } from "src/util";
+import magnifyingGlassImg from "../assets/emptyState/magnifying-glass.svg";
+import emptyTableResultsImg from "../assets/emptyState/empty-table-results.svg";
+import { StatementViewType } from "./statementPageTypes";
+import { tabAttr, viewAttr } from "src/util";
+import { Link } from "react-router-dom";
+import { commonStyles } from "src/common";
+
+const footer = (
+  <Anchor href={statementsTable} target="_blank">
+    Learn more about statements
+  </Anchor>
+);
+
+const emptySearchResults = {
+  title: "No SQL statements match your search.",
+  icon: magnifyingGlassImg,
+  footer,
+};
+
+function getMessage(type: StatementViewType): EmptyTableProps {
+  switch (type) {
+    case StatementViewType.ACTIVE:
+      return {
+        title: "No active SQL statements",
+        icon: emptyTableResultsImg,
+        message: "There are currently no active statement executions.",
+        footer: (
+          <Link
+            className={commonStyles("link")}
+            to={`/sql-activity?${tabAttr}=Statements&${viewAttr}=fingerprints`}
+          >
+            View Statement Fingerprints to see historical statement statistics.
+          </Link>
+        ),
+      };
+    case StatementViewType.FINGERPRINTS:
+    default:
+      return {
+        title: "No SQL statements since this page was last cleared",
+        icon: emptyTableResultsImg,
+        message:
+          "Statements are cleared every hour by default, or according to your configuration.",
+        footer,
+      };
+  }
+}
+
+export const EmptyStatementsPlaceholder: React.FC<{
+  isEmptySearchResults: boolean;
+  statementView: StatementViewType;
+}> = ({ isEmptySearchResults, statementView }) => {
+  const emptyPlaceholderProps: EmptyTableProps = isEmptySearchResults
+    ? emptySearchResults
+    : getMessage(statementView);
+  return <EmptyTable {...emptyPlaceholderProps} />;
+};
