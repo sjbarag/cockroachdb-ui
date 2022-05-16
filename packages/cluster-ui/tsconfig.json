@@ -10,6 +10,7 @@
     "moduleResolution": "Node",
     "noImplicitAny": true,
     "outDir": "./dist/types",
+    "preserveSymlinks": true,
     "target": "es6",
     "skipLibCheck": true,
     "sourceMap": false
