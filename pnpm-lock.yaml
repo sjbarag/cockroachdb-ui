@@ -1,11 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  root: 'link:'
   turbo: ^1.2.8
-
-dependencies:
-  root: 'link:'
 
 devDependencies:
   turbo: 1.2.8
