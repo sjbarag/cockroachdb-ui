@@ -9,7 +9,7 @@
 // licenses/APL.txt.
 
 import React from "react";
-import { Spinner } from "@cockroachlabs/icons";
+import { Spinner } from "@cockroachlabs/ui-components";
 import { Spin, Icon } from "antd";
 import classNames from "classnames/bind";
 import styles from "./tableSpinner.module.scss";
