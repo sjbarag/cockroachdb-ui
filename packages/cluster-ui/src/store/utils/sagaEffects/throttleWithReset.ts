@@ -8,8 +8,6 @@
 // by the Apache License, Version 2.0, included in the file
 // licenses/APL.txt.
 
-import { ActionPattern } from "@redux-saga/types";
-import { ForkEffect } from "@redux-saga/core/effects";
 import {
   actionChannel,
   cancel,
@@ -18,6 +16,7 @@ import {
   race,
   take,
 } from "redux-saga/effects";
+import type { ForkEffect, ActionPattern } from "redux-saga/effects";
 import { buffers, Task } from "redux-saga";
 import { Action } from "redux";
 
