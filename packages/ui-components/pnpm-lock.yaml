@@ -8,6 +8,7 @@ specifiers:
   '@babel/preset-env': 7.16.11
   '@babel/preset-react': 7.16.7
   '@babel/preset-typescript': 7.16.7
+  '@babel/runtime': ^7.17.9
   '@cockroachlabs/design-tokens': ^0.4.7
   '@cockroachlabs/eslint-config': ^1.0.1
   '@cockroachlabs/icons': ^0.5.2
@@ -64,6 +65,7 @@ devDependencies:
   '@babel/preset-env': 7.16.11_@babel+core@7.17.9
   '@babel/preset-react': 7.16.7_@babel+core@7.17.9
   '@babel/preset-typescript': 7.16.7_@babel+core@7.17.9
+  '@babel/runtime': 7.17.9
   '@cockroachlabs/design-tokens': link:../design-tokens
   '@cockroachlabs/eslint-config': link:../eslint-config
   '@testing-library/jest-dom': 5.16.4
@@ -1342,8 +1344,8 @@ packages:
       regenerator-runtime: 0.13.7
     dev: true
 
-  /@babel/runtime/7.15.4:
-    resolution: {integrity: sha512-99catp6bHCaxr4sJ/DbTGgHS4+Rs2RVd2g7iOap6SLGPDknRK9ztKNsE/Fg6QhSeh1FGE5f6gHGQmvvn3I3xhw==}
+  /@babel/runtime/7.17.9:
+    resolution: {integrity: sha512-lSiBBvodq29uShpWGNbgFdKYNiFDo5/HIYsaCEY9ff4sb10x9jizo2+pRrSyF4jKZCXqgzuqBOQKbUm90gQwJg==}
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.13.7
@@ -1696,7 +1698,7 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       '@babel/code-frame': 7.16.7
-      '@babel/runtime': 7.15.4
+      '@babel/runtime': 7.17.9
       '@types/aria-query': 4.2.1
       aria-query: 4.2.2
       chalk: 4.1.0
@@ -1709,7 +1711,7 @@ packages:
     resolution: {integrity: sha512-Gy+IoFutbMQcky0k+bqqumXZ1cTGswLsFqmNLzNdSKkU9KGV2u9oXhukCbbJ9/LRPKiqwxEE8VpV/+YZlfkPUA==}
     engines: {node: '>=8', npm: '>=6', yarn: '>=1'}
     dependencies:
-      '@babel/runtime': 7.15.4
+      '@babel/runtime': 7.17.9
       '@types/testing-library__jest-dom': 5.9.5
       aria-query: 5.0.0
       chalk: 3.0.0
@@ -1727,7 +1729,7 @@ packages:
       react: '*'
       react-dom: '*'
     dependencies:
-      '@babel/runtime': 7.15.4
+      '@babel/runtime': 7.17.9
       '@testing-library/dom': 8.1.0
       '@types/react-dom': 17.0.13
       react: 17.0.2
@@ -2280,7 +2282,7 @@ packages:
     resolution: {integrity: sha512-o/HelwhuKpTj/frsOsbNLNgnNGVIFsVP/SW2BSF14gVl7kAfMOJ6/8wUAUvG1R1NHKrfG+2sHZTu0yauT1qBrA==}
     engines: {node: '>=6.0'}
     dependencies:
-      '@babel/runtime': 7.15.4
+      '@babel/runtime': 7.17.9
       '@babel/runtime-corejs3': 7.13.8
     dev: true
 
@@ -3279,7 +3281,7 @@ packages:
   /final-form/4.20.6:
     resolution: {integrity: sha512-fCdwIj49KOaFfDRlXB57Eo+GghIMZQWrA9TakQI3C9uQxHwaFHXqZSNRlUdfnQmNNeySwGOaGPZCvjy58hyv4w==}
     dependencies:
-      '@babel/runtime': 7.15.4
+      '@babel/runtime': 7.17.9
     dev: true
 
   /find-cache-dir/3.3.1:
@@ -4987,7 +4989,7 @@ packages:
       final-form: ^4.20.4
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@babel/runtime': 7.15.4
+      '@babel/runtime': 7.17.9
       final-form: 4.20.6
       react: 17.0.2
     dev: true
@@ -5069,7 +5071,7 @@ packages:
   /regenerator-transform/0.14.5:
     resolution: {integrity: sha512-eOf6vka5IO151Jfsw2NO9WpGX58W6wWmefK3I1zEGr0lOD0u8rwPaNqQL1aRxUaxLeKO3ArNh3VYg1KbaD+FFw==}
     dependencies:
-      '@babel/runtime': 7.15.4
+      '@babel/runtime': 7.17.9
     dev: true
 
   /regexp.prototype.flags/1.3.1:

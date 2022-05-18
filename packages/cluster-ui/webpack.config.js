@@ -33,6 +33,7 @@ module.exports = (env, argv) => {
     devtool: "source-map",
 
     resolve: {
+      symlinks: true,
       modules: [
         'node_modules',
         path.join(__dirname, 'src/fonts'),
