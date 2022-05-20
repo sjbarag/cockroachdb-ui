@@ -12,7 +12,7 @@ specifiers:
   '@babel/preset-typescript': ^7.8.0
   '@babel/runtime': ^7.12.13
   '@bazel/typescript': 5.4.2
-  '@cockroachlabs/crdb-protobuf-client': ^0.0.12
+  '@cockroachlabs/crdb-protobuf-client': workspace:../protobuf-client
   '@cockroachlabs/design-tokens': workspace:../design-tokens
   '@cockroachlabs/eslint-config': workspace:../eslint-config
   '@cockroachlabs/icons': workspace:../icons
@@ -90,7 +90,7 @@ specifiers:
   moment-locales-webpack-plugin: ^1.2.0
   npm-run-all: ^4.1.5
   prettier: ^1.19.1
-  protobufjs: 6.8.8
+  protobufjs: 6.8.6
   react: 17.0.2
   react-dom: 17.0.2
   react-helmet: ^5.2.0
@@ -119,7 +119,7 @@ specifiers:
 
 dependencies:
   '@babel/runtime': 7.17.9
-  '@cockroachlabs/crdb-protobuf-client': 0.0.12_qyry37ayv6h2u52vcg26oc7q5i
+  '@cockroachlabs/crdb-protobuf-client': file:../protobuf-client_protobufjs@6.8.6
 
 devDependencies:
   '@babel/cli': 7.14.5_@babel+core@7.17.5
@@ -209,7 +209,7 @@ devDependencies:
   moment-locales-webpack-plugin: 1.2.0_6bfi6i6fo4iancghuoocipcliu
   npm-run-all: 4.1.5
   prettier: 1.19.1
-  protobufjs: 6.8.8
+  protobufjs: 6.8.6
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-helmet: 5.2.1_react@17.0.2
@@ -5471,16 +5471,6 @@ packages:
       minimist: 1.2.6
     dev: true
 
-  /@cockroachlabs/crdb-protobuf-client/0.0.12_qyry37ayv6h2u52vcg26oc7q5i:
-    resolution: {integrity: sha512-yQP+62rzPAquyTrexeRkds5FIBvyXGsetewCVt39easUyiXBZnB8oEMKCJlP0z+/elirIWfFOuFxPOvSNEwWzw==}
-    peerDependencies:
-      protobufjs: ^6.8.8
-      typescript: ^3.7.5 || 4
-    dependencies:
-      protobufjs: 6.8.8
-      typescript: 4.6.4
-    dev: false
-
   /@emotion/cache/10.0.29:
     resolution: {integrity: sha512-fU2VtSVlHiF27empSbxi1O2JFdNWZO+2NFHfwO0pxgTep6Xa3uGb+3pVKfLww2l/IBGLNEZl5Xf/++A4wAYDYQ==}
     dependencies:
@@ -7234,6 +7224,10 @@ packages:
     resolution: {integrity: sha512-bpcvu/MKHHeYX+qeEN8GE7DIravODWdACVA1ctevD8CN24RhPZIKMn9ntfAsrvLfSX3cR5RrBKAbYm9bGs0A+Q==}
     dev: true
 
+  /@types/long/3.0.32:
+    resolution: {integrity: sha512-ZXyOOm83p7X8p3s0IYM3VeueNmHpkk/yMlP8CLeOnEcu6hIwPH7YjZBvhQkR0ZFS2DqZAxKtJ/M5fcuv3OU5BA==}
+    dev: true
+
   /@types/long/4.0.1:
     resolution: {integrity: sha512-5tXH6Bx/kNGd3MgffdmP4dy2Z+G4eaXw0SE81Tq3BNadtnMR5/ySMzX4SLEzHJzSmPNn4HIdpQsBvXMUykr58w==}
     dev: true
@@ -7285,6 +7279,10 @@ packages:
 
   /@types/node/16.11.26:
     resolution: {integrity: sha512-GZ7bu5A6+4DtG7q9GsoHXy3ALcgeIHP4NnL0Vv2wu0uUB/yQex26v0tf6/na1mm0+bS9Uw+0DFex7aaKr2qawQ==}
+    dev: true
+
+  /@types/node/8.10.66:
+    resolution: {integrity: sha512-tktOkFUA4kXx2hhhrB8bIFb5TbwzS4uOhKEmwiD+NoiL0qtP2OQ9mFldbgD4dV1djrlBYP6eBuQZiWjuHUpqFw==}
     dev: true
 
   /@types/normalize-package-data/2.4.0:
@@ -15745,6 +15743,26 @@ packages:
       xtend: 4.0.2
     dev: true
 
+  /protobufjs/6.8.6:
+    resolution: {integrity: sha512-eH2OTP9s55vojr3b7NBaF9i4WhWPkv/nq55nznWNp/FomKrLViprUcqnBjHph2tFQ+7KciGPTPsVWGz0SOhL0Q==}
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      '@protobufjs/aspromise': 1.1.2
+      '@protobufjs/base64': 1.1.2
+      '@protobufjs/codegen': 2.0.4
+      '@protobufjs/eventemitter': 1.1.0
+      '@protobufjs/fetch': 1.1.0
+      '@protobufjs/float': 1.0.2
+      '@protobufjs/inquire': 1.1.0
+      '@protobufjs/path': 1.1.2
+      '@protobufjs/pool': 1.1.0
+      '@protobufjs/utf8': 1.1.0
+      '@types/long': 3.0.32
+      '@types/node': 8.10.66
+      long: 4.0.0
+    dev: true
+
   /protobufjs/6.8.8:
     resolution: {integrity: sha512-AAmHtD5pXgZfi7GMpllpO3q1Xw1OYldr+dMUlAnffGTAhqkg72WdmSY71uKBF/JuyiKs8psYbtKrhi0ASCD8qw==}
     hasBin: true
@@ -19525,3 +19543,14 @@ packages:
   /zwitch/1.0.5:
     resolution: {integrity: sha512-V50KMwwzqJV0NpZIZFwfOD5/lyny3WlSzRiXgA0G7VUnRlqttta1L6UQIHzd6EuBY/cHGfwTIck7w1yH6Q5zUw==}
     dev: true
+
+  file:../protobuf-client_protobufjs@6.8.6:
+    resolution: {directory: ../protobuf-client, type: directory}
+    id: file:../protobuf-client
+    name: '@cockroachlabs/crdb-protobuf-client'
+    version: 0.0.12
+    peerDependencies:
+      protobufjs: 6.8.6
+    dependencies:
+      protobufjs: 6.8.6
+    dev: false
