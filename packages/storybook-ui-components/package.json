@@ -19,6 +19,7 @@
   "homepage": "https://github.com/cockroachdb/ui#readme",
   "dependencies": {
     "@cockroachlabs/icons": "workspace:../icons",
+    "@cockroachlabs/o11y-ui": "workspace:../o11y-ui",
     "@cockroachlabs/ui-components": "workspace:../ui-components",
     "ts-loader": "9.4.2",
     "typescript": "4.8.4"
