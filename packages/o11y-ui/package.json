@@ -5,26 +5,20 @@
   "type": "module",
   "sideEffects": false,
   "main": "dist/index.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": {
-        "types": "./dist/index.js",
-        "default": "./dist/index.d.ts"
-      }
-    }
-  },
   "repository": "https://github.com/cockroachdb/ui",
   "author": "Cockroach Labs <npmjs@cockroachlabs.com>",
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "@types/react": "17",
+    "@types/react": "^17.0.48",
     "react": "17",
     "react-dom": "17",
     "typescript": "^5.1.3"
   },
   "dependencies": {
+    "@cockroachlabs/ui-components": "workspace:../ui-components",
     "antd": "^5.6.0",
     "tslib": "^2.5.3"
   },

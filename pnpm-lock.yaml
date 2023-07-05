@@ -14,7 +14,7 @@ importers:
     devDependencies:
       auto:
         specifier: 10.43.0
-        version: 10.43.0(@types/node@18.6.2)(typescript@5.1.3)
+        version: 10.43.0(@types/node@16.18.14)(typescript@5.1.3)
 
   packages/design-tokens:
     devDependencies:
@@ -35,7 +35,7 @@ importers:
         version: 8.6.0(eslint@8.35.0)
       eslint-plugin-prettier:
         specifier: ^4.0.0
-        version: 4.2.1(eslint-config-prettier@8.6.0)(eslint@8.35.0)(prettier@2.8.8)
+        version: 4.2.1(eslint-config-prettier@8.6.0)(eslint@8.35.0)(prettier@2.8.4)
       eslint-plugin-react:
         specifier: ^7.28.0
         version: 7.32.2(eslint@8.35.0)
@@ -76,6 +76,9 @@ importers:
 
   packages/o11y-ui:
     dependencies:
+      '@cockroachlabs/ui-components':
+        specifier: workspace:../ui-components
+        version: link:../ui-components
       antd:
         specifier: ^5.6.0
         version: 5.6.1(react-dom@17.0.2)(react@17.0.2)
@@ -84,7 +87,7 @@ importers:
         version: 2.5.3
     devDependencies:
       '@types/react':
-        specifier: '17'
+        specifier: ^17.0.48
         version: 17.0.48
       react:
         specifier: '17'
@@ -101,6 +104,9 @@ importers:
       '@cockroachlabs/icons':
         specifier: workspace:../icons
         version: link:../icons
+      '@cockroachlabs/o11y-ui':
+        specifier: workspace:../o11y-ui
+        version: link:../o11y-ui
       '@cockroachlabs/ui-components':
         specifier: workspace:../ui-components
         version: link:../ui-components
@@ -407,7 +413,7 @@ packages:
     engines: {node: '>=10.x'}
     dev: true
 
-  /@auto-it/core@10.43.0(@types/node@18.6.2)(typescript@5.1.3):
+  /@auto-it/core@10.43.0(@types/node@16.18.14)(typescript@5.1.3):
     resolution: {integrity: sha512-aAhEodT0y2gS1ueKl2iCMc5VDK9jZMnuspGDaR8SBKcsP7o8R6hxKtxGc2cAAoNOPewcBpe72Yy8768FLoUhAQ==}
     peerDependencies:
       typescript: '*'
@@ -450,7 +456,7 @@ packages:
       tapable: 2.2.1
       terminal-link: 2.1.1
       tinycolor2: 1.4.2
-      ts-node: 10.9.1(@types/node@18.6.2)(typescript@5.1.3)
+      ts-node: 10.9.1(@types/node@16.18.14)(typescript@5.1.3)
       tslib: 2.1.0
       type-fest: 0.21.3
       typescript: 5.1.3
@@ -464,10 +470,10 @@ packages:
       - supports-color
     dev: true
 
-  /@auto-it/npm@10.43.0(@types/node@18.6.2)(typescript@5.1.3):
+  /@auto-it/npm@10.43.0(@types/node@16.18.14)(typescript@5.1.3):
     resolution: {integrity: sha512-XR3HA8HwUHFaZHQjFeUBDtymjIKEv4m2W1/uaix6MSgPs3Np/hmV7e6R/TGdA8XXFU1oSlkQEuu0CI9/rK4qKA==}
     dependencies:
-      '@auto-it/core': 10.43.0(@types/node@18.6.2)(typescript@5.1.3)
+      '@auto-it/core': 10.43.0(@types/node@16.18.14)(typescript@5.1.3)
       '@auto-it/package-json-utils': 10.43.0
       await-to-js: 3.0.0
       endent: 2.1.0
@@ -498,11 +504,11 @@ packages:
       parse-github-url: 1.0.2
     dev: true
 
-  /@auto-it/released@10.43.0(@types/node@18.6.2)(typescript@5.1.3):
+  /@auto-it/released@10.43.0(@types/node@16.18.14)(typescript@5.1.3):
     resolution: {integrity: sha512-pwUG0uUX1Zeoinj7BB2/af7aRLU3mgbBqpHyCip5VJyYjRnGvoZKRpYbSl+zY7MnT9LVbKy9zPWezjyM5j0Ong==}
     dependencies:
       '@auto-it/bot-list': 10.43.0
-      '@auto-it/core': 10.43.0(@types/node@18.6.2)(typescript@5.1.3)
+      '@auto-it/core': 10.43.0(@types/node@16.18.14)(typescript@5.1.3)
       deepmerge: 4.2.2
       fp-ts: 2.12.3
       io-ts: 2.2.19(fp-ts@2.12.3)
@@ -516,10 +522,10 @@ packages:
       - typescript
     dev: true
 
-  /@auto-it/version-file@10.43.0(@types/node@18.6.2)(typescript@5.1.3):
+  /@auto-it/version-file@10.43.0(@types/node@16.18.14)(typescript@5.1.3):
     resolution: {integrity: sha512-PikUfE89C8yzb9EKylMBWyizQ+0PfXTkDahyu5kqefokxETnEKcV/6qDS5GvAVCchprN1ibvNwEq7tkeBRtSfA==}
     dependencies:
-      '@auto-it/core': 10.43.0(@types/node@18.6.2)(typescript@5.1.3)
+      '@auto-it/core': 10.43.0(@types/node@16.18.14)(typescript@5.1.3)
       fp-ts: 2.12.3
       io-ts: 2.2.19(fp-ts@2.12.3)
       semver: 7.5.1
@@ -7483,15 +7489,15 @@ packages:
     engines: {node: '>=0.8'}
     dev: true
 
-  /auto@10.43.0(@types/node@18.6.2)(typescript@5.1.3):
+  /auto@10.43.0(@types/node@16.18.14)(typescript@5.1.3):
     resolution: {integrity: sha512-dZTGoIhzJa6vP4QBtBc4xPjscs2NyoMTeIht4rBPk0hz6NySev3Wrp1UReCwrl/gYx4cuSyjNfYaG0gJtnfEqQ==}
     engines: {node: '>=10.x'}
     hasBin: true
     dependencies:
-      '@auto-it/core': 10.43.0(@types/node@18.6.2)(typescript@5.1.3)
-      '@auto-it/npm': 10.43.0(@types/node@18.6.2)(typescript@5.1.3)
-      '@auto-it/released': 10.43.0(@types/node@18.6.2)(typescript@5.1.3)
-      '@auto-it/version-file': 10.43.0(@types/node@18.6.2)(typescript@5.1.3)
+      '@auto-it/core': 10.43.0(@types/node@16.18.14)(typescript@5.1.3)
+      '@auto-it/npm': 10.43.0(@types/node@16.18.14)(typescript@5.1.3)
+      '@auto-it/released': 10.43.0(@types/node@16.18.14)(typescript@5.1.3)
+      '@auto-it/version-file': 10.43.0(@types/node@16.18.14)(typescript@5.1.3)
       await-to-js: 3.0.0
       chalk: 4.1.2
       command-line-application: 0.10.1
@@ -9261,24 +9267,6 @@ packages:
       eslint-config-prettier: 8.6.0(eslint@8.35.0)
       prettier: 2.8.4
       prettier-linter-helpers: 1.0.0
-    dev: true
-
-  /eslint-plugin-prettier@4.2.1(eslint-config-prettier@8.6.0)(eslint@8.35.0)(prettier@2.8.8):
-    resolution: {integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==}
-    engines: {node: '>=12.0.0'}
-    peerDependencies:
-      eslint: '>=7.28.0'
-      eslint-config-prettier: '*'
-      prettier: '>=2.0.0'
-    peerDependenciesMeta:
-      eslint-config-prettier:
-        optional: true
-    dependencies:
-      eslint: 8.35.0
-      eslint-config-prettier: 8.6.0(eslint@8.35.0)
-      prettier: 2.8.8
-      prettier-linter-helpers: 1.0.0
-    dev: false
 
   /eslint-plugin-react-hooks@4.6.0(eslint@8.35.0):
     resolution: {integrity: sha512-oFc7Itz9Qxh2x4gNHStv3BqJq54ExXmfC+a1NjAta66IAN87Wu0R/QArgIS9qKzX3dXKPI9H5crl9QchNMY9+g==}
@@ -12419,12 +12407,12 @@ packages:
     resolution: {integrity: sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==}
     engines: {node: '>=10.13.0'}
     hasBin: true
-    dev: true
 
   /prettier@2.8.8:
     resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
     engines: {node: '>=10.13.0'}
     hasBin: true
+    dev: true
 
   /pretty-error@4.0.0:
     resolution: {integrity: sha512-AoJ5YMAcXKYxKhuJGdcvse+Voc6v1RgnsR3nWcYU7q4t6z0Q6T86sv5Zq8VIRbOWWFpvdGE83LtdSMNd+6Y0xw==}
@@ -14621,7 +14609,7 @@ packages:
       webpack: 5.75.0(esbuild@0.17.19)
     dev: false
 
-  /ts-node@10.9.1(@types/node@18.6.2)(typescript@5.1.3):
+  /ts-node@10.9.1(@types/node@16.18.14)(typescript@5.1.3):
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -14640,7 +14628,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.3
-      '@types/node': 18.6.2
+      '@types/node': 16.18.14
       acorn: 8.8.2
       acorn-walk: 8.2.0
       arg: 4.1.3
