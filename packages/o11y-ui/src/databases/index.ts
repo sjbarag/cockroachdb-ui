@@ -1,1 +1,1 @@
-export { DatabasesTable, type DatabasesTableProps } from "./DatabasesTable";
+export { DatabasesTable, type Database, type DatabasesTableProps } from "./DatabasesTable";

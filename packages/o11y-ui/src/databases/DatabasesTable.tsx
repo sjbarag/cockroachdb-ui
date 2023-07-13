@@ -1,7 +1,8 @@
 import React, { useEffect, useMemo } from "react";
 import { notification, Table, Tooltip } from "antd";
 import type { ColumnsType } from "antd/es/table";
-import { Icon, Spinner } from "@cockroachlabs/ui-components";
+import { Button, Icon, Spinner } from "@cockroachlabs/ui-components";
+import { useO11yUiContext } from "../context";
 
 export interface Database {
   name: string,
@@ -23,6 +24,8 @@ export interface DatabasesTableProps {
   databases: Database[],
   loading: boolean,
   error: Error | null,
+  refresh: () => void,
+  dbLinkPrefix: string,
 }
 
 const HEADER_COMPONENTS = {
@@ -56,6 +59,9 @@ const HEADER_COMPONENTS = {
 } as const;
 
 export const DatabasesTable = (props: DatabasesTableProps) => {
+  const ctx = useO11yUiContext();
+  const CtxLink = ctx.Link;
+
   const columns = useMemo((): ColumnsType<Database> => {
     // TODO: Replace this with a better formatter. Probably the one copied from CRDB.
     const storageFormatter = new Intl.NumberFormat("en-US", {
@@ -72,7 +78,7 @@ export const DatabasesTable = (props: DatabasesTableProps) => {
         dataIndex: "name",
         render: (_value, db) => <span>
           <Icon iconName="Stack" size="small"/>
-          {db.name}
+          <CtxLink to={`${props.dbLinkPrefix}/${db.name}`}>{db.name}</CtxLink>
         </span>,
       },
       {
@@ -102,7 +108,7 @@ export const DatabasesTable = (props: DatabasesTableProps) => {
         render: (_value, db) => db.numIndexRecommendations < 1 ? "None" : db.numIndexRecommendations,
       },
     ];
-  }, []);
+  }, [CtxLink]);
 
   useEffect(() => {
     if (props.error == null) {
@@ -114,14 +120,20 @@ export const DatabasesTable = (props: DatabasesTableProps) => {
     });
   }, [props.error]);
 
-  if (props.loading) {
+  if (props.loading && props.databases.length === 0) {
     return <Spinner/>;
   }
 
-  return <Table<Database>
-    // Use the "name" field as the React key instead of providing a separate "key"
-    rowKey="name"
-    columns={columns}
-    dataSource={props.databases}
-  />;
+  return <>
+    <Button intent="secondary" onClick={props.refresh}>
+      <Icon iconName="Refresh" size="small"/>
+      { props.loading ? "Refreshing..." : "Refresh" }
+    </Button>
+    <Table<Database>
+      // Use the "name" field as the React key instead of providing a separate "key"
+      rowKey="name"
+      columns={columns}
+      dataSource={props.databases}
+    />
+  </>;
 }
